@@ -1,8 +1,10 @@
-<h1>Listing projects</h1>
+<h2>Listing projects</h2>
 
 <%= link_to 'New Project', new_project_path, :class => 'btn success' %>
 
 <hr />
+
+<% if @projects.size > 0 %>
 
 <%= paginate @projects %>
 
@@ -31,6 +33,10 @@
 </table>
 
 <%= paginate @projects %>
+
+<% else %>
+<p>no projects</p>
+<% end %>
 
 <hr />
 

@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20111023084547) do
 
   create_table "projects", :force => true do |t|
     t.string   "name",                        :null => false
+    t.string   "real_name",                   :null => false
     t.string   "description", :default => "", :null => false
     t.integer  "user_id",                     :null => false
     t.datetime "created_at"
@@ -56,6 +57,7 @@ ActiveRecord::Schema.define(:version => 20111023084547) do
 
   create_table "tables", :force => true do |t|
     t.string   "name",                        :null => false
+    t.string   "real_name",                   :null => false
     t.string   "description", :default => "", :null => false
     t.integer  "project_id",                  :null => false
     t.integer  "user_id",                     :null => false

@@ -1,10 +1,5 @@
 <h2><%= @project.name %></h2>
-
-<h3>Basic Information</h3>
-<p>
-  <b>Description:</b>
-  <%= @project.description %>
-</p>
+<p><%= @project.description %></p>
 
 <h3>Tables</h3>
 <% if @project.tables.size > 0 %>
