@@ -21,6 +21,12 @@ class TablesController < InheritedResources::Base
 
   def show
     @table = Table.user_is(current_user).find(params[:id])
+    RealTable.set_table(@table)
+    @column_names = RealTable.column_namez
+    @records = RealTable.find(:all)
+
+    logger.debug(@column_names)
+    logger.debug(@records)
   end
 
   def update

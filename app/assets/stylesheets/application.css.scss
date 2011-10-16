@@ -62,6 +62,21 @@ form .input {
   margin-left: 220px;
 }
 
+h5.project {
+  background: url(database.png) no-repeat 0 0px;
+  padding-left: 20px;
+  font-size: 16px;
+  line-height: 16px;
+  margin-bottom: 10px;
+}
+
+li.table {
+  background: url(table.png) no-repeat 0 0px;
+  padding-left: 20px;
+  margin-left: 15px;
+  margin-bottom: 5px;
+}
+
 
 /*
  * for container-app layout
@@ -111,4 +126,6 @@ body {
   border: 0;
 }
  */
+
+@import "fileupload/jquery.fileupload-ui";
 

@@ -1,6 +1,25 @@
 <h2><%= link_to @project.name, project_path(@project) %>&nbsp;&gt;&nbsp;<%= @table.name %></h2>
 <p><%= @table.description %></p>
 
+<table class="zebra-striped">
+  <thead id="data-header">
+    <tr>
+    <% @column_names.each do |column_name| %>
+      <th><%= column_name %></th>
+    <% end %>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @records.each do |record| %>
+    <tr>
+    <% record.column_namez.each do |column_name| %>
+      <td><%= record[column_name] %></td>
+    <% end %>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
 
 <%= link_to 'Edit', edit_project_table_path(@project, @table), :class => 'btn' %>&nbsp;&nbsp;
 <%= link_to 'Back To Project', project_path(@project), :class => 'btn' %>
