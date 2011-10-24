@@ -1,0 +1,38 @@
+<h1>Listing projects</h1>
+
+<%= link_to 'New Project', new_project_path, :class => 'btn success' %>
+
+<hr />
+
+<%= paginate @projects %>
+
+<table class='zebra-striped'>
+  <thead>
+    <tr>
+      <th class='project_name'>Name</th>
+      <th class='project_description'>Description</th>
+      <th class='project_menu'></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @projects.each do |project| %>
+    <tr>
+      <td class='project_name'><%= project.name %></td>
+      <td class='project_description'><%= project.description %></td>
+      <td class='project_menu'>
+        <%= link_to 'Show', project, :class => 'btn' %>&nbsp;
+        <%= link_to 'Edit', edit_project_path(project), :class => 'btn' %>&nbsp;
+        <%= link_to 'Destroy', project, :class => 'btn', confirm: 'Are you sure?', method: :delete %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= paginate @projects %>
+
+<hr />
+
+<%= link_to 'New Project', new_project_path, :class => 'btn success' %>
+

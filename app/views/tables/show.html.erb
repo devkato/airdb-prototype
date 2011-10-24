@@ -1,0 +1,6 @@
+<h2><%= link_to @project.name, project_path(@project) %>&nbsp;&gt;&nbsp;<%= @table.name %></h2>
+<p><%= @table.description %></p>
+
+
+<%= link_to 'Edit', edit_project_table_path(@project, @table), :class => 'btn' %>&nbsp;&nbsp;
+<%= link_to 'Back To Project', project_path(@project), :class => 'btn' %>

@@ -1,0 +1,26 @@
+<h2><%= @project.name %></h2>
+
+<h3>Basic Information</h3>
+<p>
+  <b>Description:</b>
+  <%= @project.description %>
+</p>
+
+<h3>Tables</h3>
+<% if @project.tables.size > 0 %>
+<ul>
+  <% @project.tables.each do |table| %>
+  <li><%= link_to table.name, project_table_path(@project, table) %></li>
+  <% end %>
+</ul>
+<% else %>
+<ul class='unstyled'>
+  <li>no tables in this project</li>
+</ul>
+<% end %>
+
+<hr />
+
+<%= link_to 'Edit', edit_project_path(@project), :class => 'btn' %>&nbsp;&nbsp;
+<%= link_to 'New Table', new_project_table_path(@project), :class => 'btn' %>&nbsp;&nbsp;
+<%= link_to 'Back To Project List', projects_path, :class => 'btn' %>
