@@ -30,9 +30,8 @@
         <div class="container-fluid">
           <a href="#" class="brand">AirDB</a>
           <ul class="nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><%= link_to 'Home', root_path %></li>
+            <li><%= link_to 'Your Projects', projects_path %></li>
           </ul>
           <p class="pull-right">
             <% if user_signed_in? %>
@@ -76,11 +75,11 @@
       <div class="sidebar">
         <div class="well">
         <% current_user.projects.each do |project| %>
-          <h5><%= project.name %></h5>
+          <h5><%= link_to project.name, project_path(project) %></h5>
           <% if project.tables.size > 0 %>
           <ul>
             <% project.tables.each do |table| %>
-            <li><%= link_to_unless_current table.name, project_table_path(@project, table) %></li>
+            <li><%= link_to_unless_current table.name, project_table_path(project, table) %></li>
             <% end %>
           </ul>
           <% else %>
